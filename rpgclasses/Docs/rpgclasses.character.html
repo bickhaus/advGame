@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module rpgclasses.character</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="rpgclasses.html"><font color="#ffffff">rpgclasses</font></a>.character</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/bick/Dropbox/RaspPiOOP/advGame1/rpgclasses/character.py">/home/bick/Dropbox/RaspPiOOP/advGame1/rpgclasses/character.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="rpgclasses.character.html#Character">Character</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="rpgclasses.character.html#Enemy">Enemy</a>
+</font></dt><dt><font face="helvetica, arial"><a href="rpgclasses.character.html#Friend">Friend</a>
+</font></dt><dt><font face="helvetica, arial"><a href="rpgclasses.character.html#Player">Player</a>
+</font></dt></dl>
+</dd>
+</dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Character">class <strong>Character</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Character-__init__"><strong>__init__</strong></a>(self, char_name, char_description, constitution, weapon=None, attack_mod=1.0, max_damage=5, items=None)</dt><dd><tt>Input:&nbsp;char_name&nbsp;(string),&nbsp;char_description&nbsp;(string),&nbsp;<br>
+constitution&nbsp;(hit&nbsp;points)&nbsp;(int),&nbsp;items&nbsp;(list&nbsp;of&nbsp;item&nbsp;<br>
+objects),&nbsp;default&nbsp;weapon&nbsp;(item),&nbsp;attack_mod&nbsp;(float),&nbsp;<br>
+max_damage&nbsp;(int)<br>
+Return:&nbsp;nothing&nbsp;returned<br>
+Initializes&nbsp;instance&nbsp;of&nbsp;<a href="#Character">Character</a>&nbsp;class&nbsp;w/&nbsp;8&nbsp;attributes.&nbsp;&nbsp;<br>
+NOTE:&nbsp;self.<strong>conversation</strong>&nbsp;is&nbsp;set&nbsp;via&nbsp;set_conversation().</tt></dd></dl>
+
+<dl><dt><a name="Character-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character&nbsp;name&nbsp;and&nbsp;description&nbsp;(string)</tt></dd></dl>
+
+<dl><dt><a name="Character-attack"><strong>attack</strong></a>(self, opponents)</dt><dd><tt>Input:&nbsp;list&nbsp;of&nbsp;opponents&nbsp;(character&nbsp;objects)<br>
+Return:&nbsp;tuple&nbsp;containing&nbsp;(1)&nbsp;who&nbsp;is&nbsp;being&nbsp;attacked&nbsp;<br>
+(character&nbsp;<a href="builtins.html#object">object</a>),&nbsp;(2)&nbsp;the&nbsp;attack&nbsp;roll&nbsp;(int),&nbsp;(3)&nbsp;damage<br>
+roll&nbsp;(int),&nbsp;(4)&nbsp;weapon&nbsp;used&nbsp;(item)</tt></dd></dl>
+
+<dl><dt><a name="Character-defend"><strong>defend</strong></a>(self, attack, damage, weapon)</dt><dd><tt>Input:&nbsp;attack&nbsp;roll&nbsp;(int),&nbsp;damage&nbsp;roll&nbsp;(int),&nbsp;weapon&nbsp;(item)<br>
+Return:&nbsp;tuple&nbsp;containing&nbsp;(1)&nbsp;boolean&nbsp;(True&nbsp;if&nbsp;still&nbsp;alive,<br>
+false&nbsp;otherwise)&nbsp;and&nbsp;(2)&nbsp;info&nbsp;re:&nbsp;outcome&nbsp;of&nbsp;attack&nbsp;(string)</tt></dd></dl>
+
+<dl><dt><a name="Character-roll_dice"><strong>roll_dice</strong></a>(self, num_dice=1, num_sides=20)</dt><dd><tt>Input:&nbsp;number&nbsp;of&nbsp;dice&nbsp;(int),&nbsp;number&nbsp;of&nbsp;sides&nbsp;to&nbsp;dice&nbsp;(int)<br>
+Returns:&nbsp;number&nbsp;equal&nbsp;to&nbsp;total&nbsp;of&nbsp;rolled&nbsp;dice</tt></dd></dl>
+
+<dl><dt><a name="Character-talk"><strong>talk</strong></a>(self, conversation=None)</dt><dd><tt>Return/Yield:&nbsp;response&nbsp;to&nbsp;player's&nbsp;salutation&nbsp;(string)</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>attack_mod</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;name&nbsp;of&nbsp;default&nbsp;weapon&nbsp;(string)</tt></dd>
+</dl>
+<dl><dt><strong>constitution</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character's&nbsp;constitution&nbsp;(hit&nbsp;points)&nbsp;(int)</tt></dd>
+</dl>
+<dl><dt><strong>conversation</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character&nbsp;response&nbsp;to&nbsp;player&nbsp;salutation&nbsp;(string)</tt></dd>
+</dl>
+<dl><dt><strong>description</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character&nbsp;description&nbsp;(string)</tt></dd>
+</dl>
+<dl><dt><strong>item_names</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;item&nbsp;names&nbsp;in&nbsp;character&nbsp;inventory&nbsp;(list&nbsp;of&nbsp;strings)</tt></dd>
+</dl>
+<dl><dt><strong>items</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character&nbsp;inventory&nbsp;(list&nbsp;of&nbsp;item&nbsp;objects)</tt></dd>
+</dl>
+<dl><dt><strong>max_damage</strong></dt>
+<dd><tt>Returns&nbsp;max&nbsp;damage&nbsp;character&nbsp;can&nbsp;inflict&nbsp;(int)</tt></dd>
+</dl>
+<dl><dt><strong>name</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character&nbsp;name&nbsp;(string)</tt></dd>
+</dl>
+<dl><dt><strong>weapon</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;default&nbsp;weapon&nbsp;(item&nbsp;object)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Enemy">class <strong>Enemy</strong></a>(<a href="rpgclasses.character.html#Character">Character</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="rpgclasses.character.html#Enemy">Enemy</a></dd>
+<dd><a href="rpgclasses.character.html#Character">Character</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Enemy-__init__"><strong>__init__</strong></a>(self, char_name, char_description, constitution, weapon=None, attack_mod=1.0, max_damage=5, items=None, weakness='any')</dt><dd><tt>Input:&nbsp;char_name&nbsp;(string),&nbsp;char_description&nbsp;(string),<br>
+constitution&nbsp;(int),&nbsp;items&nbsp;(list&nbsp;of&nbsp;item&nbsp;objects),&nbsp;<br>
+default&nbsp;weapon&nbsp;(item),&nbsp;attack_mod&nbsp;(float),&nbsp;max_damage&nbsp;(int),<br>
+weakness&nbsp;(string)<br>
+Return:&nbsp;none<br>
+Initializes&nbsp;isntance&nbsp;of&nbsp;<a href="#Enemy">Enemy</a>&nbsp;class&nbsp;w/&nbsp;10&nbsp;attributes.&nbsp;&nbsp;<br>
+NOTE:&nbsp;self.<strong>conversation</strong>&nbsp;is&nbsp;set&nbsp;via&nbsp;set_conversation()&nbsp;and<br>
+theft_victim&nbsp;will&nbsp;be&nbsp;updated&nbsp;automatically.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-steal"><strong>steal</strong></a>(self, dice_roll)</dt><dd><tt>Input:&nbsp;dice_roll&nbsp;(int)<br>
+Return:&nbsp;tuple&nbsp;containing&nbsp;(1)&nbsp;an&nbsp;item&nbsp;<a href="builtins.html#object">object</a>&nbsp;(if&nbsp;successful)&nbsp;<br>
+or&nbsp;None&nbsp;(if&nbsp;unsuccessful),&nbsp;(2)&nbsp;is&nbsp;a&nbsp;related&nbsp;message&nbsp;(string)&nbsp;<br>
+If&nbsp;enemy&nbsp;has&nbsp;items&nbsp;and&nbsp;you&nbsp;haven't&nbsp;previously&nbsp;tried&nbsp;to&nbsp;steal,&nbsp;<br>
+allow&nbsp;player&nbsp;to&nbsp;attempt&nbsp;to&nbsp;steal&nbsp;and,&nbsp;if&nbsp;successful&nbsp;return&nbsp;<br>
+randomly&nbsp;chosen&nbsp;item</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>weakness</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character's&nbsp;weakness&nbsp;(string)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="rpgclasses.character.html#Character">Character</a>:<br>
+<dl><dt><a name="Enemy-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character&nbsp;name&nbsp;and&nbsp;description&nbsp;(string)</tt></dd></dl>
+
+<dl><dt><a name="Enemy-attack"><strong>attack</strong></a>(self, opponents)</dt><dd><tt>Input:&nbsp;list&nbsp;of&nbsp;opponents&nbsp;(character&nbsp;objects)<br>
+Return:&nbsp;tuple&nbsp;containing&nbsp;(1)&nbsp;who&nbsp;is&nbsp;being&nbsp;attacked&nbsp;<br>
+(character&nbsp;<a href="builtins.html#object">object</a>),&nbsp;(2)&nbsp;the&nbsp;attack&nbsp;roll&nbsp;(int),&nbsp;(3)&nbsp;damage<br>
+roll&nbsp;(int),&nbsp;(4)&nbsp;weapon&nbsp;used&nbsp;(item)</tt></dd></dl>
+
+<dl><dt><a name="Enemy-defend"><strong>defend</strong></a>(self, attack, damage, weapon)</dt><dd><tt>Input:&nbsp;attack&nbsp;roll&nbsp;(int),&nbsp;damage&nbsp;roll&nbsp;(int),&nbsp;weapon&nbsp;(item)<br>
+Return:&nbsp;tuple&nbsp;containing&nbsp;(1)&nbsp;boolean&nbsp;(True&nbsp;if&nbsp;still&nbsp;alive,<br>
+false&nbsp;otherwise)&nbsp;and&nbsp;(2)&nbsp;info&nbsp;re:&nbsp;outcome&nbsp;of&nbsp;attack&nbsp;(string)</tt></dd></dl>
+
+<dl><dt><a name="Enemy-roll_dice"><strong>roll_dice</strong></a>(self, num_dice=1, num_sides=20)</dt><dd><tt>Input:&nbsp;number&nbsp;of&nbsp;dice&nbsp;(int),&nbsp;number&nbsp;of&nbsp;sides&nbsp;to&nbsp;dice&nbsp;(int)<br>
+Returns:&nbsp;number&nbsp;equal&nbsp;to&nbsp;total&nbsp;of&nbsp;rolled&nbsp;dice</tt></dd></dl>
+
+<dl><dt><a name="Enemy-talk"><strong>talk</strong></a>(self, conversation=None)</dt><dd><tt>Return/Yield:&nbsp;response&nbsp;to&nbsp;player's&nbsp;salutation&nbsp;(string)</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="rpgclasses.character.html#Character">Character</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>attack_mod</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;name&nbsp;of&nbsp;default&nbsp;weapon&nbsp;(string)</tt></dd>
+</dl>
+<dl><dt><strong>constitution</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character's&nbsp;constitution&nbsp;(hit&nbsp;points)&nbsp;(int)</tt></dd>
+</dl>
+<dl><dt><strong>conversation</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character&nbsp;response&nbsp;to&nbsp;player&nbsp;salutation&nbsp;(string)</tt></dd>
+</dl>
+<dl><dt><strong>description</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character&nbsp;description&nbsp;(string)</tt></dd>
+</dl>
+<dl><dt><strong>item_names</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;item&nbsp;names&nbsp;in&nbsp;character&nbsp;inventory&nbsp;(list&nbsp;of&nbsp;strings)</tt></dd>
+</dl>
+<dl><dt><strong>items</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character&nbsp;inventory&nbsp;(list&nbsp;of&nbsp;item&nbsp;objects)</tt></dd>
+</dl>
+<dl><dt><strong>max_damage</strong></dt>
+<dd><tt>Returns&nbsp;max&nbsp;damage&nbsp;character&nbsp;can&nbsp;inflict&nbsp;(int)</tt></dd>
+</dl>
+<dl><dt><strong>name</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character&nbsp;name&nbsp;(string)</tt></dd>
+</dl>
+<dl><dt><strong>weapon</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;default&nbsp;weapon&nbsp;(item&nbsp;object)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Friend">class <strong>Friend</strong></a>(<a href="rpgclasses.character.html#Character">Character</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="rpgclasses.character.html#Friend">Friend</a></dd>
+<dd><a href="rpgclasses.character.html#Character">Character</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Friend-__init__"><strong>__init__</strong></a>(self, char_name, char_description, constitution, weapon=None, attack_mod=1.0, max_damage=5, items=None, in_party=False)</dt><dd><tt>Input:&nbsp;char_name&nbsp;(string),&nbsp;char_description&nbsp;(string),&nbsp;<br>
+constitution&nbsp;(hit&nbsp;points)&nbsp;(int),&nbsp;items&nbsp;(list&nbsp;of&nbsp;item&nbsp;<br>
+objects),&nbsp;default&nbsp;weapon&nbsp;(item),&nbsp;attack_mod&nbsp;(float),&nbsp;and<br>
+max_damage&nbsp;(int)<br>
+Return:&nbsp;none<br>
+Initializes&nbsp;isntance&nbsp;of&nbsp;<a href="#Enemy">Enemy</a>&nbsp;class&nbsp;w/&nbsp;8&nbsp;attributes.&nbsp;&nbsp;<br>
+NOTE:&nbsp;self.<strong>conversation</strong>&nbsp;is&nbsp;set&nbsp;via&nbsp;set_conversation().</tt></dd></dl>
+
+<dl><dt><a name="Friend-receive_gift"><strong>receive_gift</strong></a>(self, gift)</dt><dd><tt>Input:&nbsp;gift&nbsp;(item&nbsp;<a href="builtins.html#object">object</a>&nbsp;or&nbsp;None)<br>
+Return:&nbsp;none<br>
+Append&nbsp;gift&nbsp;to&nbsp;inventory,&nbsp;thank&nbsp;player,&nbsp;unless&nbsp;gift&nbsp;is&nbsp;None</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>in_party</strong></dt>
+<dd><tt>Return&nbsp;True&nbsp;if&nbsp;in&nbsp;player's&nbsp;party,&nbsp;else&nbsp;False&nbsp;(boolean)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="rpgclasses.character.html#Character">Character</a>:<br>
+<dl><dt><a name="Friend-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character&nbsp;name&nbsp;and&nbsp;description&nbsp;(string)</tt></dd></dl>
+
+<dl><dt><a name="Friend-attack"><strong>attack</strong></a>(self, opponents)</dt><dd><tt>Input:&nbsp;list&nbsp;of&nbsp;opponents&nbsp;(character&nbsp;objects)<br>
+Return:&nbsp;tuple&nbsp;containing&nbsp;(1)&nbsp;who&nbsp;is&nbsp;being&nbsp;attacked&nbsp;<br>
+(character&nbsp;<a href="builtins.html#object">object</a>),&nbsp;(2)&nbsp;the&nbsp;attack&nbsp;roll&nbsp;(int),&nbsp;(3)&nbsp;damage<br>
+roll&nbsp;(int),&nbsp;(4)&nbsp;weapon&nbsp;used&nbsp;(item)</tt></dd></dl>
+
+<dl><dt><a name="Friend-defend"><strong>defend</strong></a>(self, attack, damage, weapon)</dt><dd><tt>Input:&nbsp;attack&nbsp;roll&nbsp;(int),&nbsp;damage&nbsp;roll&nbsp;(int),&nbsp;weapon&nbsp;(item)<br>
+Return:&nbsp;tuple&nbsp;containing&nbsp;(1)&nbsp;boolean&nbsp;(True&nbsp;if&nbsp;still&nbsp;alive,<br>
+false&nbsp;otherwise)&nbsp;and&nbsp;(2)&nbsp;info&nbsp;re:&nbsp;outcome&nbsp;of&nbsp;attack&nbsp;(string)</tt></dd></dl>
+
+<dl><dt><a name="Friend-roll_dice"><strong>roll_dice</strong></a>(self, num_dice=1, num_sides=20)</dt><dd><tt>Input:&nbsp;number&nbsp;of&nbsp;dice&nbsp;(int),&nbsp;number&nbsp;of&nbsp;sides&nbsp;to&nbsp;dice&nbsp;(int)<br>
+Returns:&nbsp;number&nbsp;equal&nbsp;to&nbsp;total&nbsp;of&nbsp;rolled&nbsp;dice</tt></dd></dl>
+
+<dl><dt><a name="Friend-talk"><strong>talk</strong></a>(self, conversation=None)</dt><dd><tt>Return/Yield:&nbsp;response&nbsp;to&nbsp;player's&nbsp;salutation&nbsp;(string)</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="rpgclasses.character.html#Character">Character</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>attack_mod</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;name&nbsp;of&nbsp;default&nbsp;weapon&nbsp;(string)</tt></dd>
+</dl>
+<dl><dt><strong>constitution</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character's&nbsp;constitution&nbsp;(hit&nbsp;points)&nbsp;(int)</tt></dd>
+</dl>
+<dl><dt><strong>conversation</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character&nbsp;response&nbsp;to&nbsp;player&nbsp;salutation&nbsp;(string)</tt></dd>
+</dl>
+<dl><dt><strong>description</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character&nbsp;description&nbsp;(string)</tt></dd>
+</dl>
+<dl><dt><strong>item_names</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;item&nbsp;names&nbsp;in&nbsp;character&nbsp;inventory&nbsp;(list&nbsp;of&nbsp;strings)</tt></dd>
+</dl>
+<dl><dt><strong>items</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character&nbsp;inventory&nbsp;(list&nbsp;of&nbsp;item&nbsp;objects)</tt></dd>
+</dl>
+<dl><dt><strong>max_damage</strong></dt>
+<dd><tt>Returns&nbsp;max&nbsp;damage&nbsp;character&nbsp;can&nbsp;inflict&nbsp;(int)</tt></dd>
+</dl>
+<dl><dt><strong>name</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character&nbsp;name&nbsp;(string)</tt></dd>
+</dl>
+<dl><dt><strong>weapon</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;default&nbsp;weapon&nbsp;(item&nbsp;object)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Player">class <strong>Player</strong></a>(<a href="rpgclasses.character.html#Character">Character</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="rpgclasses.character.html#Player">Player</a></dd>
+<dd><a href="rpgclasses.character.html#Character">Character</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Player-__init__"><strong>__init__</strong></a>(self, char_name, char_description, constitution, weapon=None, attack_mod=1.0, max_damage=5, items=None)</dt><dd><tt>Input:&nbsp;char_name&nbsp;(string),&nbsp;char_description&nbsp;(string),&nbsp;<br>
+constitution&nbsp;(hit&nbsp;points)&nbsp;(int),&nbsp;items&nbsp;(list&nbsp;of&nbsp;item&nbsp;<br>
+objects),&nbsp;default&nbsp;weapon&nbsp;(item),&nbsp;attack_mod&nbsp;(float),&nbsp;and<br>
+max_damage&nbsp;(int)<br>
+Return:&nbsp;none<br>
+Initializes&nbsp;isntance&nbsp;of&nbsp;<a href="#Enemy">Enemy</a>&nbsp;class&nbsp;w/&nbsp;8&nbsp;attributes.&nbsp;&nbsp;<br>
+NOTE:&nbsp;self.<strong>conversation</strong>&nbsp;is&nbsp;set&nbsp;via&nbsp;set_conversation()</tt></dd></dl>
+
+<dl><dt><a name="Player-attack"><strong>attack</strong></a>(self, opponents)</dt><dd><tt>Input:&nbsp;list&nbsp;of&nbsp;opponents&nbsp;(character&nbsp;objects)<br>
+Return:&nbsp;tuple&nbsp;containing&nbsp;(1)&nbsp;defender&nbsp;(character&nbsp;<a href="builtins.html#object">object</a>),<br>
+(2)&nbsp;attack&nbsp;roll&nbsp;(int),&nbsp;(3)&nbsp;damage&nbsp;roll&nbsp;(int),&nbsp;<br>
+(4)&nbsp;weapon&nbsp;(item)</tt></dd></dl>
+
+<dl><dt><a name="Player-flee_check"><strong>flee_check</strong></a>(self)</dt><dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;True&nbsp;if&nbsp;wants&nbsp;to&nbsp;flee,&nbsp;false&nbsp;otherwise&nbsp;(boolean)</tt></dd></dl>
+
+<dl><dt><a name="Player-give_item"><strong>give_item</strong></a>(self)</dt><dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;item&nbsp;<a href="builtins.html#object">object</a>&nbsp;or&nbsp;None&nbsp;if&nbsp;player&nbsp;cancels&nbsp;gift<br>
+Uses&nbsp;the&nbsp;pick_item&nbsp;method&nbsp;to&nbsp;give&nbsp;gift&nbsp;to&nbsp;friend.</tt></dd></dl>
+
+<dl><dt><a name="Player-inspect_item"><strong>inspect_item</strong></a>(self)</dt><dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;item&nbsp;name&nbsp;(string)&nbsp;or&nbsp;None&nbsp;if&nbsp;player&nbsp;cancels<br>
+Uses&nbsp;the&nbsp;pick_item&nbsp;method&nbsp;to&nbsp;choose&nbsp;item&nbsp;and&nbsp;get&nbsp;info.</tt></dd></dl>
+
+<dl><dt><a name="Player-pick_char"><strong>pick_char</strong></a>(self, characters, can_cancel=True)</dt><dd><tt>Input:&nbsp;characters&nbsp;(list),&nbsp;whether&nbsp;can&nbsp;cancel&nbsp;(boolean)<br>
+Return:&nbsp;character&nbsp;<a href="builtins.html#object">object</a>&nbsp;or&nbsp;"cancel"&nbsp;(string)&nbsp;<br>
+Gets&nbsp;user&nbsp;to&nbsp;pick&nbsp;character&nbsp;and&nbsp;returns&nbsp;character&nbsp;or<br>
+"cancel"&nbsp;(if&nbsp;allowed)</tt></dd></dl>
+
+<dl><dt><a name="Player-pick_item"><strong>pick_item</strong></a>(self, header, item_type=None)</dt><dd><tt>Input:&nbsp;header&nbsp;(string)&nbsp;is&nbsp;message&nbsp;that&nbsp;precedes&nbsp;items&nbsp;list,<br>
+item_type&nbsp;(string)&nbsp;denoting&nbsp;item&nbsp;type&nbsp;to&nbsp;filter<br>
+Return:&nbsp;item&nbsp;<a href="builtins.html#object">object</a>&nbsp;or&nbsp;"cancel"&nbsp;(string)<br>
+Gets&nbsp;user&nbsp;to&nbsp;pick&nbsp;item&nbsp;and&nbsp;returns&nbsp;item&nbsp;picked&nbsp;or&nbsp;"cancel"</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="rpgclasses.character.html#Character">Character</a>:<br>
+<dl><dt><a name="Player-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character&nbsp;name&nbsp;and&nbsp;description&nbsp;(string)</tt></dd></dl>
+
+<dl><dt><a name="Player-defend"><strong>defend</strong></a>(self, attack, damage, weapon)</dt><dd><tt>Input:&nbsp;attack&nbsp;roll&nbsp;(int),&nbsp;damage&nbsp;roll&nbsp;(int),&nbsp;weapon&nbsp;(item)<br>
+Return:&nbsp;tuple&nbsp;containing&nbsp;(1)&nbsp;boolean&nbsp;(True&nbsp;if&nbsp;still&nbsp;alive,<br>
+false&nbsp;otherwise)&nbsp;and&nbsp;(2)&nbsp;info&nbsp;re:&nbsp;outcome&nbsp;of&nbsp;attack&nbsp;(string)</tt></dd></dl>
+
+<dl><dt><a name="Player-roll_dice"><strong>roll_dice</strong></a>(self, num_dice=1, num_sides=20)</dt><dd><tt>Input:&nbsp;number&nbsp;of&nbsp;dice&nbsp;(int),&nbsp;number&nbsp;of&nbsp;sides&nbsp;to&nbsp;dice&nbsp;(int)<br>
+Returns:&nbsp;number&nbsp;equal&nbsp;to&nbsp;total&nbsp;of&nbsp;rolled&nbsp;dice</tt></dd></dl>
+
+<dl><dt><a name="Player-talk"><strong>talk</strong></a>(self, conversation=None)</dt><dd><tt>Return/Yield:&nbsp;response&nbsp;to&nbsp;player's&nbsp;salutation&nbsp;(string)</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="rpgclasses.character.html#Character">Character</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>attack_mod</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;name&nbsp;of&nbsp;default&nbsp;weapon&nbsp;(string)</tt></dd>
+</dl>
+<dl><dt><strong>constitution</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character's&nbsp;constitution&nbsp;(hit&nbsp;points)&nbsp;(int)</tt></dd>
+</dl>
+<dl><dt><strong>conversation</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character&nbsp;response&nbsp;to&nbsp;player&nbsp;salutation&nbsp;(string)</tt></dd>
+</dl>
+<dl><dt><strong>description</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character&nbsp;description&nbsp;(string)</tt></dd>
+</dl>
+<dl><dt><strong>item_names</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;item&nbsp;names&nbsp;in&nbsp;character&nbsp;inventory&nbsp;(list&nbsp;of&nbsp;strings)</tt></dd>
+</dl>
+<dl><dt><strong>items</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character&nbsp;inventory&nbsp;(list&nbsp;of&nbsp;item&nbsp;objects)</tt></dd>
+</dl>
+<dl><dt><strong>max_damage</strong></dt>
+<dd><tt>Returns&nbsp;max&nbsp;damage&nbsp;character&nbsp;can&nbsp;inflict&nbsp;(int)</tt></dd>
+</dl>
+<dl><dt><strong>name</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;character&nbsp;name&nbsp;(string)</tt></dd>
+</dl>
+<dl><dt><strong>weapon</strong></dt>
+<dd><tt>Input:&nbsp;none<br>
+Return:&nbsp;default&nbsp;weapon&nbsp;(item&nbsp;object)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
