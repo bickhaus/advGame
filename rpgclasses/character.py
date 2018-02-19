@@ -306,7 +306,7 @@ class Enemy(Character):
         # If you haven't attempted to steal, attempt to steal
         if dice_roll > 8:
             item_stolen = choice(self.items)
-            self.remove_item([item_stolen,])
+            self.items.remove(item_stolen)
             self._theft_victim = True
             return (item_stolen, "Item stolen: {0}".format(item_stolen))
 
